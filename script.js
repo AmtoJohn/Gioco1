@@ -7,8 +7,8 @@ function startGame() {
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
-        this.canvas.width = 480;
-        this.canvas.height = 270    ;
+        this.canvas.width = 920;
+        this.canvas.height = 540;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20); //ogni 20 ms chiamo il metodo updateGameArea
@@ -37,6 +37,7 @@ var myGameArea = {
       )
     }
 }
+
 let move;
 var animatedObject = {
   speedX: 0,
@@ -107,20 +108,20 @@ var redSquare = {
 
   document.addEventListener('keydown', function(event) {
     //left
-    if(event.keyCode == 37) {
-        animatedObject.x -= 10;
+    if(event.keyCode == 65) {
+        animatedObject.speedX -= 1;
     }
     //top
-    else if(event.keyCode == 38) {
-        animatedObject.y -= 10;
+    else if(event.keyCode == 87) {
+        animatedObject.speedY -= 1;
     }
     //right
-    else if(event.keyCode == 39) {
-        animatedObject.x += 10;
+    else if(event.keyCode == 68) {
+        animatedObject.speedX += 1;
     }
     //bottom
-    else if(event.keyCode == 40) {
-        animatedObject.y += 10;
+    else if(event.keyCode == 83) {
+        animatedObject.speedY += 1;
     }
 });
 
